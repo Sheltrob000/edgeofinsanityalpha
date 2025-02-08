@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 	spriteDirection()
 	
 	
+	
 	var xspeed = movementSpeed * movmentDirection * delta
 	print(xspeed)
 	$CharacterBody3D.velocity.x = xspeed
