@@ -1,8 +1,8 @@
 extends Node3D
 
-const movementSpeed = 100
+const movementSpeed = 600
 const gravity = 10
-const dashspeed = 300
+const dashspeed = 500
 
 
 var verticalSpeed = 0
