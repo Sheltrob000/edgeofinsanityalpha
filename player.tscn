@@ -23,3 +23,6 @@ sprite_frames = SubResource("SpriteFrames_ur1o8")
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
 pixel_size = 0.0005
 texture = ExtResource("1_1034o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.6003)

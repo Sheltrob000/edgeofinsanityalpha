@@ -1,11 +1,15 @@
 extends Node3D
 
-const movementSpeed = 600
-const gravity = 10
-const dashspeed = 1000
+const movementSpeed = 400
+const gravity = 2
+const dashspeed = 600
+const jumpSpeed = 30
+const maxVerticalSpeed = 20
+const maxCameraSpeed = 300
+const MaxCameraDistance = 20
 
 
-var verticalSpeed = 0
+var verticalSpeed := 0
 var isLeft = false
 var isInAir = false
 var isDashing = false
@@ -27,6 +31,36 @@ func spriteDirection():
 		$CharacterBody3D/Sprite3D.flip_h = true
 	elif movmentDirection == 1: $CharacterBody3D/Sprite3D.flip_h = false
 
+func jump():
+	if Input.is_action_just_pressed("jump"):
+		verticalSpeed = jumpSpeed
+
+func setVerticalSpeed():
+	if $CharacterBody3D.is_on_ceiling():
+		verticalSpeed = 0
+	elif $CharacterBody3D.is_on_floor() and !Input.is_action_just_pressed("jump"):
+		verticalSpeed = 0
+	elif Input.is_action_just_released("jump") and canDoubleJump == true:
+		verticalSpeed = 0
+	verticalSpeed -= gravity
+
+
+
+
+func moveCamera():
+	var camerax = $Camera3D.position.x
+	var cameray = $Camera3D.position.y
+	var playerx = $CharacterBody3D.position.x
+	var playery = $CharacterBody3D.position.y
+	var distancex = playerx - camerax
+	
+	if abs(playerx - camerax) > 1:
+		$Camera3D.position.x += (playerx - camerax) * .1
+
+
+	#$Camera3D.position.x += (playerx - camerax) * .1
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -34,17 +68,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	spriteDirection()
+	moveCamera()
+
 
 
 func _physics_process(delta: float) -> void:
 	$CharacterBody3D.move_and_slide()
 	getMovmentDirection()
-	spriteDirection()
-	
-	
 	
 	var xspeed = movementSpeed * movmentDirection * delta
-	print(xspeed)
 	$CharacterBody3D.velocity.x = xspeed
-#	seeing is major changes will be seen
+	
+	
+	jump()
+	setVerticalSpeed()
+	$CharacterBody3D.velocity.y = verticalSpeed

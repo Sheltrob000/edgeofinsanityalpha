@@ -5,11 +5,13 @@
 
 [node name="testAlphaLevel" type="Node3D"]
 
-[node name="TestPlatform" parent="." instance=ExtResource("1_7aqub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00702, 0, 0)
-
 [node name="Player" parent="." instance=ExtResource("2_n0hto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4094)
+[node name="platforms" type="Node3D" parent="."]
+
+[node name="TestPlatform" parent="platforms" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00702, 0, 0)
+
+[node name="TestPlatform" parent="platforms/TestPlatform" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46592, 2.98833, 0)
