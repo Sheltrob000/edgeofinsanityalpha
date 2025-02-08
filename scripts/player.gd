@@ -1,7 +1,7 @@
 extends Node3D
 
 const movementSpeed = 400
-const gravity = 2
+const gravity = 1.5
 const dashspeed = 600
 const jumpSpeed = 30
 const maxVerticalSpeed = 20
@@ -33,14 +33,21 @@ func spriteDirection():
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
-		verticalSpeed = jumpSpeed
-
+		#verticalSpeed = jumpSpeed
+		if $CharacterBody3D.is_on_floor():
+			verticalSpeed = jumpSpeed
+		elif !$CharacterBody3D.is_on_floor() and canDoubleJump:
+			verticalSpeed = jumpSpeed
+			canDoubleJump = false
+	if $CharacterBody3D.is_on_floor():
+		canDoubleJump = true
+		
 func setVerticalSpeed():
 	if $CharacterBody3D.is_on_ceiling():
 		verticalSpeed = 0
 	elif $CharacterBody3D.is_on_floor() and !Input.is_action_just_pressed("jump"):
 		verticalSpeed = 0
-	elif Input.is_action_just_released("jump") and canDoubleJump == true:
+	elif Input.is_action_just_released("jump") and canDoubleJump == true and verticalSpeed > 0:
 		verticalSpeed = 0
 	verticalSpeed -= gravity
 
@@ -54,8 +61,12 @@ func moveCamera():
 	var playery = $CharacterBody3D.position.y
 	var distancex = playerx - camerax
 	
-	if abs(playerx - camerax) > 1:
+	if abs(playerx - camerax) > .3:
 		$Camera3D.position.x += (playerx - camerax) * .1
+		
+	if abs(playery - cameray) > .5:
+		$Camera3D.position.y += (playery - cameray) * .1
+		
 
 
 	#$Camera3D.position.x += (playerx - camerax) * .1
@@ -76,6 +87,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	$CharacterBody3D.move_and_slide()
 	getMovmentDirection()
+	
+	
+	
 	
 	var xspeed = movementSpeed * movmentDirection * delta
 	$CharacterBody3D.velocity.x = xspeed

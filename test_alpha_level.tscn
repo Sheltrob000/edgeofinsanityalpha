@@ -13,5 +13,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="TestPlatform" parent="platforms" instance=ExtResource("1_7aqub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00702, 0, 0)
 
-[node name="TestPlatform" parent="platforms/TestPlatform" instance=ExtResource("1_7aqub")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46592, 2.98833, 0)
+[node name="TestPlatform2" parent="platforms" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.985, 0, 0)
+
+[node name="TestPlatform3" parent="platforms" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47294, 2.98833, 0)
+
+[node name="TestPlatform4" parent="platforms" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40887, 0)
+
+[node name="TestPlatform5" parent="platforms" instance=ExtResource("1_7aqub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.37418, 8.21602, 0)

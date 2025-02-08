@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3wp0v"]
 [ext_resource type="Texture2D" uid="uid://ds16rdj2fsaib" path="res://playerAnimations/incsanityMC.png" id="1_1034o"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ts4fm"]
-size = Vector3(0.523193, 1.28723, 1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhui"]
+radius = 0.3
+height = 1.28639
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ur1o8"]
 
@@ -14,8 +15,8 @@ script = ExtResource("1_3wp0v")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577859, 0.143616, 0)
-shape = SubResource("BoxShape3D_ts4fm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577859, 0.101716, 0)
+shape = SubResource("CapsuleShape3D_fbhui")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
 sprite_frames = SubResource("SpriteFrames_ur1o8")
