@@ -1,13 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6rogi3xdp070"]
+[gd_scene load_steps=23 format=3 uid="uid://b6rogi3xdp070"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3wp0v"]
 [ext_resource type="Texture2D" uid="uid://ds16rdj2fsaib" path="res://playerAnimations/incsanityMC.png" id="1_1034o"]
+[ext_resource type="Texture2D" uid="uid://plpv1burcr60" path="res://playerAnimations/mcdashing/frame0000.png" id="2_lnx86"]
+[ext_resource type="Texture2D" uid="uid://dpylbvrw0kdt4" path="res://playerAnimations/mcdashing/frame0001.png" id="3_hrpnr"]
+[ext_resource type="Texture2D" uid="uid://dpwqs32ntxhn1" path="res://playerAnimations/mcdashing/frame0002.png" id="4_uxcw2"]
+[ext_resource type="Texture2D" uid="uid://bviwb2hvfx08p" path="res://playerAnimations/mcdashing/frame0003.png" id="5_8g0vp"]
+[ext_resource type="Texture2D" uid="uid://uhw2fnjlidkw" path="res://playerAnimations/mcdashing/frame0004.png" id="6_hfeep"]
+[ext_resource type="Texture2D" uid="uid://bxj3eqoqrm2bl" path="res://playerAnimations/mcdashing/frame0005.png" id="7_j2quv"]
+[ext_resource type="Texture2D" uid="uid://cieierldcyaw0" path="res://playerAnimations/mcdashing/frame0006.png" id="8_qfhac"]
+[ext_resource type="Texture2D" uid="uid://cg0ws0a7mvhmw" path="res://playerAnimations/mcdashing/frame0007.png" id="9_h0f37"]
+[ext_resource type="Texture2D" uid="uid://cf514ns0d1gfb" path="res://playerAnimations/mcdashing/frame0008.png" id="10_mq1id"]
+[ext_resource type="Texture2D" uid="uid://cxdv4gyljg8cf" path="res://playerAnimations/mcwalking/frame0000.png" id="11_7ypqu"]
+[ext_resource type="Texture2D" uid="uid://bjsu2krsgg5qp" path="res://playerAnimations/mcwalking/frame0001.png" id="12_h8ej1"]
+[ext_resource type="Texture2D" uid="uid://1byxs2fkv8s1" path="res://playerAnimations/mcwalking/frame0002.png" id="13_gvq8j"]
+[ext_resource type="Texture2D" uid="uid://du0j2s0hr6nq0" path="res://playerAnimations/mcwalking/frame0003.png" id="14_4aie8"]
+[ext_resource type="Texture2D" uid="uid://t2rah0cjkb6c" path="res://playerAnimations/mcwalking/frame0004.png" id="15_3emfb"]
+[ext_resource type="Texture2D" uid="uid://bq25vbgfdy0e7" path="res://playerAnimations/mcwalking/frame0005.png" id="16_b85e8"]
+[ext_resource type="Texture2D" uid="uid://424bje22rns3" path="res://playerAnimations/mcwalking/frame0006.png" id="17_7mpm2"]
+[ext_resource type="Texture2D" uid="uid://by7k382uhl7tw" path="res://playerAnimations/mcwalking/frame0007.png" id="18_dd4bv"]
+[ext_resource type="Texture2D" uid="uid://c3i6vmrpu46bp" path="res://playerAnimations/mcwalking/frame0008.png" id="19_q7r73"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhui"]
 radius = 0.3
 height = 1.28639
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ur1o8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gxqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lnx86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hrpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uxcw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8g0vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hfeep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j2quv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qfhac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h0f37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mq1id")
+}],
+"loop": true,
+"name": &"dashing",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1034o")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7ypqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_h8ej1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gvq8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4aie8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3emfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b85e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7mpm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dd4bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q7r73")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 15.0
+}]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_3wp0v")
@@ -19,11 +110,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577859, 0.101716, 0)
 shape = SubResource("CapsuleShape3D_fbhui")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
-sprite_frames = SubResource("SpriteFrames_ur1o8")
+pixel_size = 0.0005
+sprite_frames = SubResource("SpriteFrames_2gxqs")
+animation = &"still"
+frame_progress = 0.894249
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+visible = false
 pixel_size = 0.0005
 texture = ExtResource("1_1034o")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.6003)
+
+[node name="dashTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="canDashTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="dashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="canDashTimer" to="." method="_on_can_dash_timer_timeout"]

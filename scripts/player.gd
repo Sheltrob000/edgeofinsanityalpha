@@ -1,23 +1,24 @@
 extends Node3D
 
 const movementSpeed = 400
-const gravity = 1.5
-const dashspeed = 600
-const jumpSpeed = 30
+const gravity = 50
+const dashspeed = 1500
+const jumpSpeed = 1100
 const maxVerticalSpeed = 20
 const maxCameraSpeed = 300
 const MaxCameraDistance = 20
 
 
 var verticalSpeed := 0
+var horozontalSpeed := 0
 var isLeft = false
 var isInAir = false
 var isDashing = false
 
 var canDash = true
 var canDoubleJump = true
-
 var movmentDirection = 0
+
 
 func getMovmentDirection():
 	movmentDirection = Input.get_axis("left", "right")
@@ -28,9 +29,23 @@ func getMovmentDirection():
 
 func spriteDirection():
 	if movmentDirection == -1:
-		$CharacterBody3D/Sprite3D.flip_h = true
-	elif movmentDirection == 1: $CharacterBody3D/Sprite3D.flip_h = false
+		$CharacterBody3D/AnimatedSprite3D.flip_h = true
+	elif movmentDirection == 1: $CharacterBody3D/AnimatedSprite3D.flip_h = false
 
+func animation():
+	if isDashing:
+		$CharacterBody3D/AnimatedSprite3D.play("dashing")
+	elif !$CharacterBody3D.is_on_floor():
+		$CharacterBody3D/AnimatedSprite3D.play("still")	
+	elif horozontalSpeed != 0:
+		$CharacterBody3D/AnimatedSprite3D.play("walking")
+
+	else:
+		$CharacterBody3D/AnimatedSprite3D.play("still")
+		#$CharacterBody3D/AnimatedSprite3D.set_frame_and_progress(0, 0)
+
+
+	
 func jump():
 	if Input.is_action_just_pressed("jump"):
 		#verticalSpeed = jumpSpeed
@@ -51,8 +66,12 @@ func setVerticalSpeed():
 		verticalSpeed = 0
 	verticalSpeed -= gravity
 
-
-
+func setHorozontalSpeed():
+	if isDashing == true:
+		horozontalSpeed = dashspeed * movmentDirection
+		verticalSpeed = 0
+	else:
+		horozontalSpeed = movementSpeed * movmentDirection
 
 func moveCamera():
 	var camerax = $Camera3D.position.x
@@ -72,8 +91,11 @@ func moveCamera():
 	#$Camera3D.position.x += (playerx - camerax) * .1
 
 func dash():
-	pass
-
+	if Input.is_action_just_pressed("dash") and canDash:
+		isDashing = true
+		canDash = false
+		$dashTimer.start()
+		$canDashTimer.start()
 
 
 
@@ -85,21 +107,29 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	spriteDirection()
-	moveCamera()
+	animation()
 
 
 
 func _physics_process(delta: float) -> void:
 	$CharacterBody3D.move_and_slide()
 	getMovmentDirection()
+	moveCamera()
+
 	
-	
-	
-	
-	var xspeed = movementSpeed * movmentDirection * delta
-	$CharacterBody3D.velocity.x = xspeed
+	dash()
+	setHorozontalSpeed()
+	$CharacterBody3D.velocity.x = horozontalSpeed * delta
 	
 	
 	jump()
 	setVerticalSpeed()
-	$CharacterBody3D.velocity.y = verticalSpeed
+	$CharacterBody3D.velocity.y = verticalSpeed * delta
+
+
+func _on_dash_timer_timeout() -> void:
+	isDashing = false
+
+
+func _on_can_dash_timer_timeout() -> void:
+	canDash = true
