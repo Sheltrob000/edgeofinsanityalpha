@@ -113,7 +113,7 @@ shape = SubResource("CapsuleShape3D_fbhui")
 pixel_size = 0.0005
 sprite_frames = SubResource("SpriteFrames_2gxqs")
 animation = &"still"
-frame_progress = 0.894249
+frame_progress = 0.427446
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
 visible = false
@@ -121,7 +121,7 @@ pixel_size = 0.0005
 texture = ExtResource("1_1034o")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.6003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.6003)
 
 [node name="dashTimer" type="Timer" parent="."]
 wait_time = 0.2

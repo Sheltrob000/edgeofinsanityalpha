@@ -11,13 +11,13 @@ const MaxCameraDistance = 20
 
 var verticalSpeed := 0
 var horozontalSpeed := 0
-var isLeft = false
-var isInAir = false
-var isDashing = false
+var isLeft := false
+var isInAir := false
+var isDashing := false
 
-var canDash = true
-var canDoubleJump = true
-var movmentDirection = 0
+var canDash := true
+var canDoubleJump := true
+var movmentDirection := 0
 
 
 func getMovmentDirection():
@@ -44,8 +44,6 @@ func animation():
 		$CharacterBody3D/AnimatedSprite3D.play("still")
 		#$CharacterBody3D/AnimatedSprite3D.set_frame_and_progress(0, 0)
 
-
-	
 func jump():
 	if Input.is_action_just_pressed("jump"):
 		#verticalSpeed = jumpSpeed
@@ -56,7 +54,7 @@ func jump():
 			canDoubleJump = false
 	if $CharacterBody3D.is_on_floor():
 		canDoubleJump = true
-		
+
 func setVerticalSpeed():
 	if $CharacterBody3D.is_on_ceiling():
 		verticalSpeed = 0
@@ -98,6 +96,13 @@ func dash():
 		$canDashTimer.start()
 
 
+func _on_dash_timer_timeout() -> void:
+	isDashing = false
+
+func _on_can_dash_timer_timeout() -> void:
+	canDash = true
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -125,11 +130,3 @@ func _physics_process(delta: float) -> void:
 	jump()
 	setVerticalSpeed()
 	$CharacterBody3D.velocity.y = verticalSpeed * delta
-
-
-func _on_dash_timer_timeout() -> void:
-	isDashing = false
-
-
-func _on_can_dash_timer_timeout() -> void:
-	canDash = true
