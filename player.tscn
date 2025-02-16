@@ -113,7 +113,7 @@ shape = SubResource("CapsuleShape3D_fbhui")
 pixel_size = 0.0005
 sprite_frames = SubResource("SpriteFrames_2gxqs")
 animation = &"still"
-frame_progress = 0.427446
+frame_progress = 0.420131
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
 visible = false
