@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c3i6vmrpu46bp" path="res://playerAnimations/mcwalking/frame0008.png" id="19_q7r73"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhui"]
-radius = 0.3
+radius = 0.245565
 height = 1.28639
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2gxqs"]
