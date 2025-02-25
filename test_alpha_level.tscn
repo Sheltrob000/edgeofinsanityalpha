@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cobct3lxeyc8n"]
+[gd_scene load_steps=4 format=3 uid="uid://cobct3lxeyc8n"]
 
 [ext_resource type="PackedScene" uid="uid://bgr56t2hn41lr" path="res://test_platform.tscn" id="1_7aqub"]
+[ext_resource type="Texture2D" uid="uid://bnnsnq3bd2i2p" path="res://assets/360_F_518419158_yXXBww2r5Z3XoutBxRX8KHNZOpPjhC03.jpg" id="1_lv0rb"]
 [ext_resource type="PackedScene" uid="uid://b6rogi3xdp070" path="res://player.tscn" id="2_n0hto"]
 
 [node name="testAlphaLevel" type="Node3D"]
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Background"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 4.08305, -10.1101)
+texture = ExtResource("1_lv0rb")
 
 [node name="Player" parent="." instance=ExtResource("2_n0hto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

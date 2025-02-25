@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t2rah0cjkb6c"
-path.s3tc="res://.godot/imported/frame0004.png-b66b2fe9f24722f660df1cd823776273.s3tc.ctex"
+uid="uid://bviwb2hvfx08p"
+path.s3tc="res://.godot/imported/frame0003.png-a7eb0d9fe481074c612aaff492badfd9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://playerAnimations/mcwalking/frame0004.png"
-dest_files=["res://.godot/imported/frame0004.png-b66b2fe9f24722f660df1cd823776273.s3tc.ctex"]
+source_file="res://assets/playerAnimations/mcdashing/frame0003.png"
+dest_files=["res://.godot/imported/frame0003.png-a7eb0d9fe481074c612aaff492badfd9.s3tc.ctex"]
 
 [params]
 

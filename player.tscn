@@ -1,29 +1,28 @@
 [gd_scene load_steps=23 format=3 uid="uid://b6rogi3xdp070"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3wp0v"]
-[ext_resource type="Texture2D" uid="uid://ds16rdj2fsaib" path="res://playerAnimations/incsanityMC.png" id="1_1034o"]
-[ext_resource type="Texture2D" uid="uid://plpv1burcr60" path="res://playerAnimations/mcdashing/frame0000.png" id="2_lnx86"]
-[ext_resource type="Texture2D" uid="uid://dpylbvrw0kdt4" path="res://playerAnimations/mcdashing/frame0001.png" id="3_hrpnr"]
-[ext_resource type="Texture2D" uid="uid://dpwqs32ntxhn1" path="res://playerAnimations/mcdashing/frame0002.png" id="4_uxcw2"]
-[ext_resource type="Texture2D" uid="uid://bviwb2hvfx08p" path="res://playerAnimations/mcdashing/frame0003.png" id="5_8g0vp"]
-[ext_resource type="Texture2D" uid="uid://uhw2fnjlidkw" path="res://playerAnimations/mcdashing/frame0004.png" id="6_hfeep"]
-[ext_resource type="Texture2D" uid="uid://bxj3eqoqrm2bl" path="res://playerAnimations/mcdashing/frame0005.png" id="7_j2quv"]
-[ext_resource type="Texture2D" uid="uid://cieierldcyaw0" path="res://playerAnimations/mcdashing/frame0006.png" id="8_qfhac"]
-[ext_resource type="Texture2D" uid="uid://cg0ws0a7mvhmw" path="res://playerAnimations/mcdashing/frame0007.png" id="9_h0f37"]
-[ext_resource type="Texture2D" uid="uid://cf514ns0d1gfb" path="res://playerAnimations/mcdashing/frame0008.png" id="10_mq1id"]
-[ext_resource type="Texture2D" uid="uid://cxdv4gyljg8cf" path="res://playerAnimations/mcwalking/frame0000.png" id="11_7ypqu"]
-[ext_resource type="Texture2D" uid="uid://bjsu2krsgg5qp" path="res://playerAnimations/mcwalking/frame0001.png" id="12_h8ej1"]
-[ext_resource type="Texture2D" uid="uid://1byxs2fkv8s1" path="res://playerAnimations/mcwalking/frame0002.png" id="13_gvq8j"]
-[ext_resource type="Texture2D" uid="uid://du0j2s0hr6nq0" path="res://playerAnimations/mcwalking/frame0003.png" id="14_4aie8"]
-[ext_resource type="Texture2D" uid="uid://t2rah0cjkb6c" path="res://playerAnimations/mcwalking/frame0004.png" id="15_3emfb"]
-[ext_resource type="Texture2D" uid="uid://bq25vbgfdy0e7" path="res://playerAnimations/mcwalking/frame0005.png" id="16_b85e8"]
-[ext_resource type="Texture2D" uid="uid://424bje22rns3" path="res://playerAnimations/mcwalking/frame0006.png" id="17_7mpm2"]
-[ext_resource type="Texture2D" uid="uid://by7k382uhl7tw" path="res://playerAnimations/mcwalking/frame0007.png" id="18_dd4bv"]
-[ext_resource type="Texture2D" uid="uid://c3i6vmrpu46bp" path="res://playerAnimations/mcwalking/frame0008.png" id="19_q7r73"]
+[ext_resource type="Texture2D" uid="uid://ds16rdj2fsaib" path="res://assets/playerAnimations/incsanityMC.png" id="1_1034o"]
+[ext_resource type="Texture2D" uid="uid://plpv1burcr60" path="res://assets/playerAnimations/mcdashing/frame0000.png" id="2_lnx86"]
+[ext_resource type="Texture2D" uid="uid://dpylbvrw0kdt4" path="res://assets/playerAnimations/mcdashing/frame0001.png" id="3_hrpnr"]
+[ext_resource type="Texture2D" uid="uid://dpwqs32ntxhn1" path="res://assets/playerAnimations/mcdashing/frame0002.png" id="4_uxcw2"]
+[ext_resource type="Texture2D" uid="uid://bviwb2hvfx08p" path="res://assets/playerAnimations/mcdashing/frame0003.png" id="5_8g0vp"]
+[ext_resource type="Texture2D" uid="uid://uhw2fnjlidkw" path="res://assets/playerAnimations/mcdashing/frame0004.png" id="6_hfeep"]
+[ext_resource type="Texture2D" uid="uid://bxj3eqoqrm2bl" path="res://assets/playerAnimations/mcdashing/frame0005.png" id="7_j2quv"]
+[ext_resource type="Texture2D" uid="uid://cieierldcyaw0" path="res://assets/playerAnimations/mcdashing/frame0006.png" id="8_qfhac"]
+[ext_resource type="Texture2D" uid="uid://cg0ws0a7mvhmw" path="res://assets/playerAnimations/mcdashing/frame0007.png" id="9_h0f37"]
+[ext_resource type="Texture2D" uid="uid://cf514ns0d1gfb" path="res://assets/playerAnimations/mcdashing/frame0008.png" id="10_mq1id"]
+[ext_resource type="Texture2D" uid="uid://cxdv4gyljg8cf" path="res://assets/playerAnimations/mcwalking/frame0000.png" id="11_7ypqu"]
+[ext_resource type="Texture2D" uid="uid://bjsu2krsgg5qp" path="res://assets/playerAnimations/mcwalking/frame0001.png" id="12_h8ej1"]
+[ext_resource type="Texture2D" uid="uid://1byxs2fkv8s1" path="res://assets/playerAnimations/mcwalking/frame0002.png" id="13_gvq8j"]
+[ext_resource type="Texture2D" uid="uid://du0j2s0hr6nq0" path="res://assets/playerAnimations/mcwalking/frame0003.png" id="14_4aie8"]
+[ext_resource type="Texture2D" uid="uid://t2rah0cjkb6c" path="res://assets/playerAnimations/mcwalking/frame0004.png" id="15_3emfb"]
+[ext_resource type="Texture2D" uid="uid://bq25vbgfdy0e7" path="res://assets/playerAnimations/mcwalking/frame0005.png" id="16_b85e8"]
+[ext_resource type="Texture2D" uid="uid://424bje22rns3" path="res://assets/playerAnimations/mcwalking/frame0006.png" id="17_7mpm2"]
+[ext_resource type="Texture2D" uid="uid://by7k382uhl7tw" path="res://assets/playerAnimations/mcwalking/frame0007.png" id="18_dd4bv"]
+[ext_resource type="Texture2D" uid="uid://c3i6vmrpu46bp" path="res://assets/playerAnimations/mcwalking/frame0008.png" id="19_q7r73"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbhui"]
-radius = 0.245565
-height = 1.28639
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2qrs"]
+size = Vector3(0.654297, 1.26746, 0.102539)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2gxqs"]
 animations = [{
@@ -106,8 +105,8 @@ script = ExtResource("1_3wp0v")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577859, 0.101716, 0)
-shape = SubResource("CapsuleShape3D_fbhui")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0880593, 0.094819, -0.00927734)
+shape = SubResource("BoxShape3D_f2qrs")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
 pixel_size = 0.0005
