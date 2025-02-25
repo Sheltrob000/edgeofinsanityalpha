@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds16rdj2fsaib"
-path.s3tc="res://.godot/imported/incsanityMC.png-8427764e7958ab197c2970a5ddd428fc.s3tc.ctex"
+uid="uid://c3i6vmrpu46bp"
+path.s3tc="res://.godot/imported/frame0008.png-b3ec1fbfd4fcbb3e6c2902479e9675eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://playerAnimations/incsanityMC.png"
-dest_files=["res://.godot/imported/incsanityMC.png-8427764e7958ab197c2970a5ddd428fc.s3tc.ctex"]
+source_file="res://assets/playerAnimations/mcwalking/frame0008.png"
+dest_files=["res://.godot/imported/frame0008.png-b3ec1fbfd4fcbb3e6c2902479e9675eb.s3tc.ctex"]
 
 [params]
 
