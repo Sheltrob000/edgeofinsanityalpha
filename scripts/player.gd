@@ -36,13 +36,12 @@ func animation():
 	if isDashing:
 		$CharacterBody3D/AnimatedSprite3D.play("dashing")
 	elif !$CharacterBody3D.is_on_floor():
-		$CharacterBody3D/AnimatedSprite3D.play("still")	
+		$CharacterBody3D/AnimatedSprite3D.play("still")
 	elif horozontalSpeed != 0:
 		$CharacterBody3D/AnimatedSprite3D.play("walking")
 
 	else:
 		$CharacterBody3D/AnimatedSprite3D.play("still")
-		#$CharacterBody3D/AnimatedSprite3D.set_frame_and_progress(0, 0)
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
